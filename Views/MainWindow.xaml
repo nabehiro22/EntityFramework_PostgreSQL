@@ -1,0 +1,36 @@
+﻿<Window x:Class="EntityFramework_PostgreSQL.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+		xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+		xmlns:ri="clr-namespace:Reactive.Bindings.Interactivity;assembly=ReactiveProperty.NETCore"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title.Value}" Height="250" Width="300" >
+
+	<i:Interaction.Triggers>
+		<i:EventTrigger EventName="Closed">
+			<ri:EventToReactiveCommand Command="{Binding ClosedCommand}" />
+		</i:EventTrigger>
+	</i:Interaction.Triggers>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="2*"/>
+		</Grid.ColumnDefinitions>
+		<StackPanel Grid.Column="0">
+			<TextBlock Text="--追加--"  HorizontalAlignment="Center" Foreground="Blue" Margin="0,10,0,0"/>
+			<TextBlock Text="名前"  HorizontalAlignment="Right"/>
+			<TextBlock Text="年齢"  HorizontalAlignment="Right" Margin="0,7,0,0"/>
+			<Button Content="追加" Command="{Binding AddCommand}" HorizontalAlignment="Center" Width="50" Margin="0,10,0,0"/>
+			<TextBlock Text="--削除--"  HorizontalAlignment="Center" Foreground="Red" Margin="0,10,0,0"/>
+			<TextBlock Text="名前"  HorizontalAlignment="Right"/>
+			<Button Content="削除" Command="{Binding DeleteCommand}" HorizontalAlignment="Center" Width="50" Margin="0,10,0,0"/>
+		</StackPanel>
+		<StackPanel Grid.Column="1">
+			<TextBox Text="{Binding AddName.Value}" Margin="0,26,0,0"/>
+			<TextBox Text="{Binding AddAge.Value}" Width="20" HorizontalAlignment="Left" Margin="0,5,0,0"/>
+			<TextBox Text="{Binding DeleteName.Value}" Margin="0,53,0,0"/>
+		</StackPanel>
+	</Grid>
+</Window>
