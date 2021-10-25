@@ -5,4 +5,4 @@
 4. PostgreSQL<br>
 で作成したPostgreSQLへアクセスするサンプルプログラムです。<br>
 解説は<br>
-https://nabehirosoft.blogspot.com/2020/01/net-core-31wpfpostgresqlentityframework.html
+https://www.nabehiro.net/2021/10/wpf-postgresql-entityframework.html
